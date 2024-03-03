@@ -1,0 +1,9 @@
+module blockstore {
+    yang-version 1.1;
+    namespace "urn:opendaylight:params:xml:ns:yang:blockstore";
+    prefix "blockstore";
+
+    revision "2018-05-17" { // TODO change revision to date of model creation
+        description "Initial revision of blockstore model";
+    }
+}
