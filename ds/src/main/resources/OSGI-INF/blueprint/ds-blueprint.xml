@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
-  xmlns:odl="http://opendaylight.org/xmlns/blueprint/v1.0.0"
-  odl:restart-dependents-on-updates="false">
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
-  <!-- This bundle uses blueprint annotations, but we still need a file here so the plugin puts the generated xml file under org/opendaylight/blueprint. -->
+    <reference id="schemaService" interface="org.opendaylight.mdsal.dom.api.DOMSchemaService" />
+  
+    <!-- Define your DOMDataBroker implementation as a bean -->
+    <bean id="myDomDataBroker" class="org.opendaylight.blockstore.ds.impl.EtcdDOMDataBroker">
+      <argument ref="schemaService"/>
+    </bean>
 
-  <service ref="blockstoreDOMDataBroker"
-    interface="org.opendaylight.mdsal.dom.api.DOMDataBroker"
-    odl:type="default" />
-
-  <service ref="blockstoreLegacyDOMDataBroker"
-    interface="org.opendaylight.controller.md.sal.dom.api.DOMDataBroker"
-    odl:type="default" />
+    <!-- Register your implementation as an OSGi service -->
+    <service interface="org.opendaylight.mdsal.dom.api.DOMDataBroker" ref="myDomDataBroker"/>
 
 </blueprint>

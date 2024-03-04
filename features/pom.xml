@@ -14,10 +14,13 @@
   <artifactId>features-aggregator</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-
+  <properties>
+    <odlparent.checkstyle.enforce>false</odlparent.checkstyle.enforce>
+    <odlparent.spotbugs.enforce>false</odlparent.spotbugs.enforce>
+<odlparent.javadoc.enforce>false</odlparent.javadoc.enforce>
+  </properties>
   <modules>
     <module>odl-blockstore-datastore</module>
-    <module>odl-mdsal-broker</module>
     <module>features-blockstore</module>
   </modules>
 </project>

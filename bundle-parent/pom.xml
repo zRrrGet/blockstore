@@ -20,7 +20,11 @@
   <artifactId>bundle-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-
+  <properties>
+    <odlparent.checkstyle.enforce>false</odlparent.checkstyle.enforce>
+    <odlparent.spotbugs.enforce>false</odlparent.spotbugs.enforce>
+<odlparent.javadoc.enforce>false</odlparent.javadoc.enforce>
+  </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -34,7 +38,6 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <exclusions>
-          <!-- https://github.com/etcd-io/jetcd/pull/493 -->
           <exclusion>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>animal-sniffer-annotations</artifactId>

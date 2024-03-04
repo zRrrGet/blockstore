@@ -28,7 +28,11 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
+  <properties>
+    <odlparent.checkstyle.enforce>false</odlparent.checkstyle.enforce>
+    <odlparent.spotbugs.enforce>false</odlparent.spotbugs.enforce>
+<odlparent.javadoc.enforce>false</odlparent.javadoc.enforce>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>

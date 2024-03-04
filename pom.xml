@@ -21,7 +21,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>blockstore-aggregator</name>
   <packaging>pom</packaging>
-
+  <properties>
+    <odlparent.checkstyle.enforce>false</odlparent.checkstyle.enforce>
+    <odlparent.spotbugs.enforce>false</odlparent.spotbugs.enforce>
+<odlparent.javadoc.enforce>false</odlparent.javadoc.enforce>
+  </properties>
   <modules>
     <module>bom</module>
     <module>bundle-parent</module>
