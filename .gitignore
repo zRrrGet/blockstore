@@ -1,0 +1,15 @@
+target/
+target-ide/
+*.class
+.settings
+.project
+.classpath
+.checkstyle
+.factorypath
+.fbExcludeFilterFile
+.tox
+*.iml
+.idea
+.fbExcludeFilterFile
+.vscode/
+.apt_generated_tests/

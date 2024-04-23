@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <reference id="schemaService" interface="org.opendaylight.mdsal.dom.api.DOMSchemaService" />
+  
+    <!-- Define your DOMDataBroker implementation as a bean -->
+    <bean id="myDomDataBroker" class="org.opendaylight.blockstore.ds.impl.HyperledgerDOMDataBroker">
+      <argument ref="schemaService"/>
+    </bean>
+
+    <!-- Register your implementation as an OSGi service -->
+    <service interface="org.opendaylight.mdsal.dom.api.DOMDataBroker" ref="myDomDataBroker"/>
+
+</blueprint>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>single-feature-parent</artifactId>
+    <version>4.0.9</version>
+    <relativePath />
+  </parent>
+
+  <groupId>org.opendaylight.blockstore</groupId>
+  <artifactId>odl-blockstore-datastore</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>feature</packaging>
+  <name>ODL :: ${project.groupId} :: ${project.artifactId}</name>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>bom</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <properties>
+    <odlparent.checkstyle.enforce>false</odlparent.checkstyle.enforce>
+    <odlparent.spotbugs.enforce>false</odlparent.spotbugs.enforce>
+<odlparent.javadoc.enforce>false</odlparent.javadoc.enforce>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>ds</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.opendaylight.infrautils</groupId>
+      <artifactId>odl-infrautils-utils</artifactId>
+      <classifier>features</classifier>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.mdsal</groupId>
+      <artifactId>odl-mdsal-common</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.mdsal</groupId>
+      <artifactId>odl-mdsal-binding</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.mdsal</groupId>
+      <artifactId>odl-mdsal-binding-runtime</artifactId>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+  </dependencies>
+</project>
